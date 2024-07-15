@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    review = Review.new(review_params)
+    review = Review.new(book_id: params[:review][:book_id].to_i, rating: params[:review][:rating].to_i, content: params[:review][:content], title: params[:review][:title])
     review.user = current_user
 
     if review.save
@@ -18,11 +18,5 @@ class ReviewsController < ApplicationController
       flash[:alert] = review.errors.full_messages.join(", ")
       redirect_to new_review_path
     end
-  end
-
-  private
-
-  def review_params
-    params.require(:review).permit(:book_id, :rating, :content, :title)
   end
 end

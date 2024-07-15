@@ -1,8 +1,13 @@
 # README
 
-To get started with BetterReads - run the following commands
+## What is this?
+This is a simple code base to be used in interviews at Tanda/Workforce. It’s a basic Rails (7.1) App that allows people to create reviews for books.
 
-```
+
+# Getting Started
+To get started with BetterReads - run the following commands. You might also need to install `sqlite` and `ruby`. You can follow the official Ruby on Rails guide here: https://guides.rubyonrails.org/getting_started.html#creating-a-new-rails-project-installing-rails
+
+```bash
 # This will install dependencies
 bundle install
 
@@ -16,4 +21,15 @@ bin/dev
 bin/rails server
 ```
 
-The visit `localhost:3000`.
+Then visit `localhost:3000`.
+
+To run the test suite
+----
+```bash
+bundle exec rake test
+
+# Alternatively
+bin/test
+```
+
+

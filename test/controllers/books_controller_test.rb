@@ -3,6 +3,8 @@ require "test_helper"
 class BooksControllerTest < ActionDispatch::IntegrationTest
   setup do
     @book = books(:one)
+    @user = users(:austin)
+    post session_path, params: { email: @user.email, password: "betterreads" }
   end
 
   test "should get index" do

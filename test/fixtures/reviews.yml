@@ -1,9 +1,22 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  content: MyString
+  title: Not a great read
+  content: Lacked depth
   rating: 1
+  user: austin
+  book: one
 
 two:
-  content: MyString
-  rating: 1
+  title: Prescient
+  content: You wouldn't believe this was written in the 1940s
+  rating: 3
+  user: austin
+  book: two
+
+three:
+  title: Great read
+  content: Deep and meaningful - a must read
+  rating: 4
+  user: bri
+  book: one
