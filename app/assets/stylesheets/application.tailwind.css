@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply font-sans text-base bg-slate-50;
+}
+
+input[type="text"], input[type="password"], textarea {
+  @apply block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full;
+}
+
+select {
+  @apply block shadow rounded-md border border-gray-400 outline-none mt-2;
+}
+
+.card {
+  @apply bg-white shadow-md rounded-lg p-6;
+}

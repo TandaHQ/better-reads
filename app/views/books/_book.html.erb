@@ -1,0 +1,15 @@
+<%# locals: (book:) %>
+<div id="<%= dom_id book %>">
+  <p class="text-xl font-bold">
+    <%= book.title %>
+  </p>
+
+  <p class="my-2">
+    <strong class="inline-block font-medium mb-1">Written by:</strong> <%= book.author %>
+  </p>
+
+  <p class="my-2">
+    <strong class="block font-medium mb-1">Description:</strong>
+    <%= book.description %>
+  </p>
+</div>

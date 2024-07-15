@@ -1,0 +1,32 @@
+<%= form_with(model: book, class: "contents") do |form| %>
+  <% if book.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+      <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+      <ul>
+        <% book.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="my-5">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :author %>
+    <%= form.text_field :author %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="inline">
+    <%= form.submit class: "rounded-lg py-3 px-5 bg-green-700 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>

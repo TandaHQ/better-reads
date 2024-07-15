@@ -1,0 +1,22 @@
+<div>
+  <h1 class="text-3xl font-bold">Sign In</h1>
+  <div>
+    <%= form_with(url: session_path, method: :post, class: "space-y-4") do |form| %>
+      <div class="flex flex-col space-y-4">
+        <div>
+          <%= form.label :email %>
+          <%= form.text_field :email, class: "block", required: true %>
+        </div>
+        
+        <div>
+          <%= form.label :password %>
+          <%= form.password_field :password, class: "block", required: true %>
+        </div>
+      </div>
+      
+      <div>
+        <%= form.submit "Sign In", class: "bg-green-700 text-white rounded p-2" %>
+      </div>
+    <% end %>
+  </div>
+</div>

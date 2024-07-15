@@ -1,0 +1,34 @@
+<div class="mx-auto w-full flex">
+
+
+  <div class="space-y-4">
+    <div class="card">
+      <%= render @book %>
+      <%= link_to "Back", books_path, class: "rounded-lg py-3 px-5 bg-gray-200 inline-block font-medium" %>
+    </div>
+
+    <% unless @reviews.length.positive? %>
+      <div class="card flex justify-center">
+        <div>
+          <p class="text-center mt-4">No reviews yet</p>
+          <%= link_to "Add a review", new_review_path, class: "rounded-lg block py-3 px-5 mt-2 bg-green-700 text-white inline-block font-medium cursor-pointer" %>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="grid grid-cols-3 gap-4">
+      <% @reviews.each do |review| %>
+        <div class="card">
+          <h2 class="text-xl font-bold"><%= review.title %></h2>
+          <p class="text-sm text-gray-500">Rating: <%= review.rating %></p>
+          <p class="text-sm text-gray-500">By <%= review.user.name %></p>
+          <p class="mt-4"><%= review.content %></p>
+        </div>
+      <% end %>
+      <div class="card">
+        <p class="text-center mt-4 text-md">Read this book?</p>
+        <%= link_to "Add your review", new_review_path, class: "rounded-lg block mx-auto py-3 px-5 mt-2 bg-green-700 text-white text-center block font-medium cursor-pointer" %>
+      </div>
+    </div>
+  </div>
+</div>
