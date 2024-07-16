@@ -21,7 +21,7 @@ bin/dev
 bin/rails server
 ```
 
-Then visit `localhost:3000`.
+Then visit `localhost:3000` and login with either user found in `seeds.rb`.
 
 To run the test suite
 ----
