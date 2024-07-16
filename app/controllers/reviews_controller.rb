@@ -9,14 +9,13 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    review = Review.new(book_id: params[:review][:book_id].to_i, rating: params[:review][:rating].to_i, content: params[:review][:content], title: params[:review][:title])
-    review.user = current_user
+    @review = Review.new(book_id: params[:review][:book_id].to_i, rating: params[:review][:rating].to_i, content: params[:review][:content], title: params[:review][:title])
+    @review.user = current_user
 
-    if review.save
+    if @review.save
       redirect_to reviews_path
     else
-      flash[:alert] = review.errors.full_messages.join(", ")
-      redirect_to new_review_path
+      render :new, status: :unprocessable_entity
     end
   end
 end

@@ -12,18 +12,18 @@
   <% end %>
 
   <div class="my-5">
-    <%= form.label :title %>
+    <%= form.label "Title of the book" %>
     <%= form.text_field :title %>
   </div>
 
   <div class="my-5">
-    <%= form.label :author %>
+    <%= form.label "Author" %>
     <%= form.text_field :author %>
   </div>
 
-  <div class="my-5">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
+  <div class="my-5 h-32">
+    <%= form.label "Blurb for the book" %>
+    <%= form.text_area :blurb %>
   </div>
 
   <div class="inline">
