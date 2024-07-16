@@ -1,7 +1,7 @@
 # README
 
 ## What is this?
-This is a simple code base to be used in interviews at Tanda/Workforce. It’s a basic Rails (7.1) App that allows people to create reviews for books.
+This is a simple code base to be used in interviews at Tanda. It’s a basic Rails (7.1) App that allows people to create reviews for books.
 
 
 # Getting Started
