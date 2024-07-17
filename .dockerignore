@@ -10,9 +10,10 @@
 /.env*
 !/.env*.erb
 
-# Ignore all default key files.
-/config/master.key
-/config/credentials/*.key
+# Include all default key files for simplicty
+# Do not do this in prod :)
+# /config/master.key
+# /config/credentials/*.key
 
 # Ignore all logfiles and tempfiles.
 /log/*

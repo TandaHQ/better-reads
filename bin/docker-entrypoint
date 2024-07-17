@@ -5,4 +5,12 @@ if [ "${1}" == "./bin/rails" ] && [ "${2}" == "server" ]; then
   ./bin/rails db:prepare
 fi
 
+if [ "${1}" == "console" ]; then
+  ./bin/rails c
+fi
+
+if [ "${1}" == "tailwind" ]; then
+  ./bin/dev
+fi
+
 exec "${@}"
