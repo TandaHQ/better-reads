@@ -11,6 +11,12 @@ fi
 
 if [ "${1}" == "tailwind" ]; then
   ./bin/dev
+
+if [ "${1}" == "tailwind-compose" ]; then
+  # no need for foreman here as we can run this in another conatiner
+  # and let docker compose handle the orchestration
+  ./bin/rails tailwindcss:watch
+  exit
 fi
 
 exec "${@}"
