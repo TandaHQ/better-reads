@@ -13,8 +13,19 @@ Download and install Docker following this guide: https://docs.docker.com/guides
 Once you have downloaded docker run the following to set up the container
 
 ```bash
+# build the application docker image
+docker compose build
+
+# Verify the image built
+docker images | grep better_reads
+
+# Run the application
+docker compose up
+
+# Alternatively if you prefer to skip compose and use direct docker commands
+
 docker build -t better_reads .
-# Verify the container built
+# Verify the image built
 docker images | grep better_reads
 
 # Run the application
@@ -27,9 +38,20 @@ docker run --rm -it \
   -v .:/rails better_reads tailwind
 ```
 
-Some other commands useful for local development with Docker
+Some other commands useful for local development with Docker via the compose plugin
 
 ```bash
+# Access the Rails console
+docker compose run --rm better_reads console
+
+# Launch a shell in a new container
+docker compose run --rm better_reads bash
+
+# Launch a shell in the running container previously launched using `docker compose up`
+docker compose exec better_reads bash
+
+# Alternatively if you prefer to skip compose and use direct docker commands
+
 # Access the Rails console
 docker run --rm -it -v .:/rails better_reads console
 
@@ -55,7 +77,7 @@ You will need to install `sqlite` and `ruby`. You can follow the official Ruby o
 bundle install
 
 # This will setup the database & seed it
-bin/rails db:setup
+bin/rails db:prepare
 
 # In one terminal run this - it will run a watcher for tailwind
 bin/dev
@@ -68,6 +90,13 @@ bin/rails server
 Visit `localhost:3000` and login with either user found in `seeds.rb`.
 
 ## Run the test suite
+
+### Using docker
+```bash
+# get a container shell first
+docker compose run --rm better_reads bash
+```
+
 ```bash
 # Using Rake
 bundle exec rake test
