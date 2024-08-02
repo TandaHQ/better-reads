@@ -1,6 +1,8 @@
 services:
   better_reads:
     build: .
+    stdin_open: true
+    tty: true
     image: better_reads:latest
     volumes:
       - .:/rails
