@@ -117,3 +117,8 @@ test bin/rails test test/controllers/books_controller_test.rb:11
 
 You can add `binding.pry` to any Ruby file or view to access the debugger. This will add a breakpoint in your terminal window to use for any debugging. If you have never used a Ruby debugger before, this article should help get you started: https://medium.com/@eddgr/the-absolute-beginners-guide-to-using-pry-in-ruby-b08681558fa6
 
+If you are using docker to run the application you'll need to make sure docker attaches to the running container to open an interactive debugging shell.
+
+After you've started the application using `docker compose up` you'll need to open a new shell in the same directory and run `docker attach $(docker compose ps -q better_reads)`.
+
+From there you'll be attached to the application container and any active breakpoints will trigger in this attached shell env.
