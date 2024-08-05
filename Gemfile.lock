@@ -75,6 +75,7 @@ GEM
       minitest (>= 5.1)
       mutex_m
       tzinfo (~> 2.0)
+    ansi (1.5.0)
     base64 (0.2.0)
     bcrypt (3.1.20)
     bigdecimal (3.1.8)
@@ -116,6 +117,11 @@ GEM
     method_source (1.1.0)
     mini_mime (1.1.5)
     minitest (5.24.1)
+    minitest-reporters (1.6.1)
+      ansi
+      builder
+      minitest (>= 5.0)
+      ruby-progressbar
     msgpack (1.7.2)
     mutex_m (0.2.0)
     net-imap (0.4.14)
@@ -184,6 +190,7 @@ GEM
       psych (>= 4.0.0)
     reline (0.5.9)
       io-console (~> 0.5)
+    ruby-progressbar (1.13.0)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -233,6 +240,8 @@ DEPENDENCIES
   bootsnap
   debug
   importmap-rails
+  minitest
+  minitest-reporters
   pry
   puma (>= 5.0)
   rails (~> 7.1.3, >= 7.1.3.4)
