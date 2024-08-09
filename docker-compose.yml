@@ -6,7 +6,6 @@ services:
     image: better_reads:latest
     volumes:
       - .:/rails
-      - gem_cache:/usr/local/bundle
     ports:
       - "3000:3000"
   tailwind:
@@ -15,7 +14,3 @@ services:
     command: "tailwind-compose"
     volumes:
       - .:/rails
-      - gem_cache:/usr/local/bundle
-
-volumes:
-  gem_cache:
