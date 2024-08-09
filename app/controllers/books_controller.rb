@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: %i[ show ]
+  before_action :set_book, only: [:show]
 
   # GET /books
   def index
