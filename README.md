@@ -107,10 +107,10 @@ bin/test
 bin/rails test
 
 # To run a specific suite
-test bin/rails test test/controllers/books_controller_test.rb:
+bin/rails test test/controllers/books_controller_test.rb
 
 # To run a test on a specific line
-test bin/rails test test/controllers/books_controller_test.rb:11
+bin/rails test test/controllers/books_controller_test.rb:11
 ```
 
 ## Debugging
